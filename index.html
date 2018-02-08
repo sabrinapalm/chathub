@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" name="viewport" content="Width=device-width, initial-scale=1.0">
+	<title>Sabrina Palm | Firebase realtidschat</title>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="chathub.css">
+	<script src="chathub.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDmaBKz7h_G3yHeTBTTZRDHEytQrltUP_I",
+        authDomain: "chathub-2fa50.firebaseapp.com",
+        databaseURL: "https://chathub-2fa50.firebaseio.com",
+        projectId: "chathub-2fa50",
+        storageBucket: "chathub-2fa50.appspot.com",
+        messagingSenderId: "348997719279"
+      };
+      firebase.initializeApp(config);
+    </script>
+</head>,,
+
+
+<body>
+	<!--<h1 id="title">CHATHUB</h1>-->
+	<div id="wrapper">
+       
+        <div id="input">
+            <input id="username" type="text" placeholder="What's your name?" name="uname" required>
+            <button id="join" type="submit">JOIN</button>
+        </div>
+        
+        <div id="info" class="hidden"><span><i class="fa fa-user" aria-hidden="true"></i> </span> 
+        <a id="signout" href="#">Exit <i class="fa fa-sign-out" aria-hidden="true"></i></a></div>
+        
+        <div id="chat" class="hidden">
+           <div id="chatwindow"></div>
+            <textarea id="message" rows="1" placeholder="Message"></textarea>
+            <button id="send" type="submit">SEND</button>
+        </div>
+        
+    </div>
+</body>
+
+</html>
