@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
 		let msgID = message.value;
 		let date = new Date();
-		let time = date.getDate() + ' ' + monthNames[date.getMonth()] + ' ' + date.getHours() + ':' + date.getMinutes();
+		let time = date.getDate() + ' ' + monthNames[date.getMonth()] + ' ' + date.getHours() + ':' + ('0'+date.getMinutes()).slice(-2);
         
 		let fullMsg = {
 			msg: msgID,
@@ -72,7 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 	//create messagebox 
 	function createMsg(name, msg, time) {
+        
 		let p = document.createElement('p');
+        
 		p.className = 'messages';
 		p.innerHTML = `<strong>${name}:</strong> ${msg} <br /> <pre>${time}</pre>`;
 		chatwindow.appendChild(p);
