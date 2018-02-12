@@ -55,9 +55,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	//push message function to database
 	function typeMsg(user) {
         chatwindow.innerText = ' ';
+        
+        var monthNames = ["januari", "februari", "mars", "april", "maj", "juni",
+          "juli", "augusti", "september", "oktober", "november", "december"];
+        
 		let msgID = message.value;
 		let date = new Date();
-		let time = date.getHours() + ':' + date.getMinutes();
+		let time = date.getDate() + ' ' + monthNames[date.getMonth()] + ' ' + date.getHours() + ':' + date.getMinutes();
+        
 		let fullMsg = {
 			msg: msgID,
 			name: uname,
@@ -69,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	function createMsg(name, msg, time) {
 		let p = document.createElement('p');
 		p.className = 'messages';
-		p.innerHTML = `<strong>${name}:</strong> ${msg} <br /> ${time}`;
+		p.innerHTML = `<strong>${name}:</strong> ${msg} <br /> <pre>${time}</pre>`;
 		chatwindow.appendChild(p);
 		chatwindow.insertBefore(p, chatwindow.childNodes[0]);
 	}
