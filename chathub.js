@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 	//push message function to database
 	function typeMsg(user) {
+        chatwindow.innerText = ' ';
 		let msgID = message.value;
 		let date = new Date();
 		let time = date.getHours() + ':' + date.getMinutes();
@@ -62,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			name: uname,
 			sent: time
 		}
-		console.log(uname, msgID, time)
 		ref.push(fullMsg);
 	}
 	//create messagebox 
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 	//get messages from database 
 	function getMessages() {
-		ref.once('value', function (snapshot) {
+		ref.on('value', function (snapshot) {
 			let allMessages = snapshot.val();
 			let keys = Object.keys(allMessages);
 			for (i = 0; i < keys.length; i++) {
