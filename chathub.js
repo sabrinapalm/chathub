@@ -54,7 +54,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 	//push message function to database
 	function typeMsg(user) {
+        
         chatwindow.innerText = ' ';
+        chatwindow.innerHTML = ' ';
         
         var monthNames = ["januari", "februari", "mars", "april", "maj", "juni",
           "juli", "augusti", "september", "oktober", "november", "december"];
