@@ -41,6 +41,7 @@ input[type=text] {
     font-family: Josefin Sans;
     text-align: center;
     font-size: 1em;
+    color: dimgray;
 }
 #chat {
     background-color: #FFF;
@@ -62,6 +63,7 @@ textarea {
     border-radius: 5px;
     font-size: 1em;
     font-family: Josefin Sans;
+    color: dimgray;
 }
 textarea:focus, input:focus{
     outline-color: #8972fe;
