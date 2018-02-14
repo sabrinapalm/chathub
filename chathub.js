@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	function typeMsg(user) {
         
         chatwindow.innerText = ' ';
+        chatwindow.innerHTML = ' ';
         
         var monthNames = ["januari", "februari", "mars", "april", "maj", "juni",
           "juli", "augusti", "september", "oktober", "november", "december"];
