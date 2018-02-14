@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 	send.addEventListener('click', function (event) {
 		typeMsg();
+        clearField();
 	})
 	//get user info
 	function getUserInput() {
@@ -111,6 +112,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		p.innerHTML = `<strong>${name}:</strong> ${msg} <br /> <pre>${time}</pre>`;
 		chatwindow.appendChild(p);
 	}
+    //clear field
+    function clearField() {
+        message.value = '';
+    }
 	//get messages from database 
 	function getMessages() {
 		ref.on('value', function (snapshot) {
