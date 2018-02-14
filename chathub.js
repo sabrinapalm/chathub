@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-	let username = document.getElementById('username');
+    let username = document.getElementById('username');
 	let input = document.getElementById('input');
 	let join = document.getElementById('join');
 	let info = document.getElementById('info');
@@ -9,9 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	let send = document.getElementById('send');
 	let chatwindow = document.getElementById('chatwindow');
     let auth = document.getElementById('auth');
+    let incorrect = document.getElementById('incorrect');
+    let incorrectBtn = document.getElementById('incorrect-btn');
 	var uname;
 	const database = firebase.database();
 	let ref = database.ref('users/');
+    
 	//chat functions
 	username.addEventListener('change', function (event) {
 		getUserInput()
@@ -23,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	signout.addEventListener('click', function (event) {
 		logout()
 	})
+    incorrectBtn.addEventListener('click', function (event) {
+        closeBtn();
+    })
 	send.addEventListener('click', function (event) {
 		typeMsg();
 	})
@@ -33,18 +39,34 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 		let userName = JSON.stringify(user);
 		window.localStorage.setItem('user', userName);
+        join.style.opacity = 1;
 	}
 	//login function
 	function login(user) {
 		let myUser = localStorage.getItem('user');
+        
+        if (localStorage.getItem('user') === null) {
+            incorrect.style.display = 'block';
+        } else {
+            input.value = localStorage.getItem('user');
+            incorrect.style.display = 'none';
+        }
+        
 		let profile = document.createElement('span');
-		uname = JSON.parse(myUser).name;
-		profile.innerHTML = `${uname}`;
-		info.appendChild(profile);
-		info.classList.remove('hidden');
-		chat.classList.remove('hidden');
-		input.classList.add('hidden');
-        auth.classList.add('hidden');
+		let obj = JSON.parse(myUser);
+        
+        if (obj === null) {
+            incorrect.style.display = 'block';
+        } else {
+            incorrect.style.display = 'none';
+            uname = obj.name;
+            profile.innerHTML = `${uname}`;
+            info.appendChild(profile);
+            info.classList.remove('hidden');
+            chat.classList.remove('hidden');
+            input.classList.add('hidden');
+            auth.classList.add('hidden');
+        }
 	}
 	//logout function
 	function logout(user) {
@@ -54,11 +76,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		input.classList.remove('hidden');
 		window.location.reload();
 	}
+    //close incorrect button
+    function closeBtn() {
+        incorrect.style.display = 'none';
+    }
 	//push message function to database
 	function typeMsg(user) {
         
         chatwindow.innerText = ' ';
-        chatwindow.innerHTML = ' ';
         
         var monthNames = ["januari", "februari", "mars", "april", "maj", "juni",
           "juli", "augusti", "september", "oktober", "november", "december"];
