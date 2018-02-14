@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	let message = document.getElementById('message');
 	let send = document.getElementById('send');
 	let chatwindow = document.getElementById('chatwindow');
+    let auth = document.getElementById('auth');
 	var uname;
 	const database = firebase.database();
 	let ref = database.ref('users/');
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		info.classList.remove('hidden');
 		chat.classList.remove('hidden');
 		input.classList.add('hidden');
+        auth.classList.add('hidden');
 	}
 	//logout function
 	function logout(user) {
