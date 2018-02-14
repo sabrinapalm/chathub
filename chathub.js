@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	let ref = database.ref('users/');
     
 	//chat functions
-	username.addEventListener('change', function (event) {
+	username.addEventListener('keyup', function (event) {
 		getUserInput()
 	});
 	join.addEventListener('click', function (event) {
@@ -40,7 +40,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 		let userName = JSON.stringify(user);
 		window.localStorage.setItem('user', userName);
-        join.style.opacity = 1;
+        
+        //validate username
+        if (username.value == "") {
+            join.style.opacity = 0.7;
+        } else {
+            join.style.opacity = 1;
+        }
 	}
 	//login function
 	function login(user) {
@@ -48,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         if (localStorage.getItem('user') === null) {
             incorrect.style.display = 'block';
-            join.style.opacity = 0.7;
+            join.style.opacity = 0.4;
         } else {
             input.value = localStorage.getItem('user');
             incorrect.style.display = 'none';
