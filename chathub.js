@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         //validate username
         if (username.value == "") {
-            join.style.opacity = 0.7;
+            join.style.opacity = 0.6;
         } else {
             join.style.opacity = 1;
         }
