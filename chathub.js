@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         if (localStorage.getItem('user') === null) {
             incorrect.style.display = 'block';
+            join.style.opacity = 0.7;
         } else {
             input.value = localStorage.getItem('user');
             incorrect.style.display = 'none';
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         if (obj === null) {
             incorrect.style.display = 'block';
+            join.style.opacity = 0.7;
         } else {
             incorrect.style.display = 'none';
             uname = obj.name;
@@ -108,7 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		p.className = 'messages';
 		p.innerHTML = `<strong>${name}:</strong> ${msg} <br /> <pre>${time}</pre>`;
 		chatwindow.appendChild(p);
-		chatwindow.insertBefore(p, chatwindow.childNodes[0]);
 	}
 	//get messages from database 
 	function getMessages() {
@@ -122,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				let time = allMessages[x].sent;
 				createMsg(name, msg, time);
 			}
+            chatwindow.scrollTop = chatwindow.scrollHeight;
 		})
 	}
 });
