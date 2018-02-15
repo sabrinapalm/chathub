@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	let message = document.getElementById('message');
 	let send = document.getElementById('send');
 	let chatwindow = document.getElementById('chatwindow');
-    let auth = document.getElementById('auth');
     let incorrect = document.getElementById('incorrect');
     let incorrectBtn = document.getElementById('incorrect-btn');
 	var uname;
@@ -74,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
             info.classList.remove('hidden');
             chat.classList.remove('hidden');
             input.classList.add('hidden');
-            auth.classList.add('hidden');
         }
 	}
 	//logout function
