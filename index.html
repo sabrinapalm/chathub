@@ -11,44 +11,40 @@
 	<script src="main.js"></script>
 	<!--Firebase stuff-->
 	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDmaBKz7h_G3yHeTBTTZRDHEytQrltUP_I",
-        authDomain: "chathub-2fa50.firebaseapp.com",
-        databaseURL: "https://chathub-2fa50.firebaseio.com",
-        projectId: "chathub-2fa50",
-        storageBucket: "chathub-2fa50.appspot.com",
-        messagingSenderId: "348997719279"
-      };
-      firebase.initializeApp(config);
-    </script>
+	<script>
+		// Initialize Firebase
+		      var config = {
+		        apiKey: "AIzaSyDmaBKz7h_G3yHeTBTTZRDHEytQrltUP_I",
+		        authDomain: "chathub-2fa50.firebaseapp.com",
+		        databaseURL: "https://chathub-2fa50.firebaseio.com",
+		        projectId: "chathub-2fa50",
+		        storageBucket: "chathub-2fa50.appspot.com",
+		        messagingSenderId: "348997719279"
+		      };
+		      firebase.initializeApp(config);
+	</script>
 </head>
-
 
 <body>
 	<div id="wrapper">
-      
-       <div id="incorrect"><p>Enter a username.</p><button id="incorrect-btn"><i class="fa fa-times" aria-hidden="true"></i></button></div>
-       
-        <div id="input">
-            <input id="username" type="text" placeholder="What's your name?" name="uname" required autofocus>
-            <button id="join" type="submit">JOIN</button>
-        </div>
-        
-        
-        
-        
-        <div id="info" class="hidden"><span><i class="fa fa-user" aria-hidden="true"></i> </span> 
-        <a id="signout" href="#">Exit <i class="fas fa-sign-out-alt"></i></a></div>
-        
-        <div id="chat" class="hidden">
-           <div id="chatwindow"></div>
-            <textarea id="message" rows="1" placeholder="Message"></textarea>
-            <button id="send" type="submit">SEND</button>
-        </div>
-        <div id="errorMessage"></div>
-    </div>
+		<div id="incorrect">
+			<p>Enter a username.</p>
+			<button id="incorrect-btn"><i class="fa fa-times" aria-hidden="true"></i>
+			</button>
+		</div>
+		<div id="input">
+			<input id="username" type="text" placeholder="What's your name?" name="uname" required autofocus>
+			<button id="join" type="submit">JOIN</button>
+		</div>
+		<div id="info" class="hidden"><span><i class="fa fa-user" aria-hidden="true"></i> </span>  <a id="signout" href="#">Exit <i class="fas fa-sign-out-alt"></i></a>
+		</div>
+		<div id="chat" class="hidden">
+			<div id="chatwindow"></div>
+			<textarea id="message" rows="1" placeholder="Message"></textarea>
+			<button id="send" type="submit">SEND</button>
+		</div>
+		<div id="errorMessage"></div>
+	</div>
 </body>
 
 </html>
