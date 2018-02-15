@@ -192,14 +192,20 @@ pre {
 }
 
 /*authorization*/
-#auth {
+#githubLogin {
+    background-color: transparent;
     text-align: center;
+    margin: 0px auto;
     font-size: 2em;
+    border: none;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%
 }
-#auth a {
+#githubLogin a {
     color: #303841;
 }
-#auth a:hover {
+#githubLogin a:hover {
     opacity: 0.7;
     transition: 0.3s;
 }

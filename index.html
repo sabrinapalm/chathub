@@ -10,6 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="chathub.css">
 	<link rel="stylesheet" type="text/css" href="media.css">
 	<script src="chathub.js"></script>
+	<script src="authorization.js"></script>
+	
+	<!--Firebase stuff-->
 	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -35,9 +38,10 @@
             <input id="username" type="text" placeholder="What's your name?" name="uname" required autofocus>
             <button id="join" type="submit">JOIN</button>
         </div>
-        <div id="auth">
-        <a href="#"><i class="fab fa-github"></i></a>
-        </div>
+        
+        <button id="githubLogin"><a href="#"><i class="fab fa-github"></i></a></button>
+        
+        
         <div id="info" class="hidden"><span><i class="fa fa-user" aria-hidden="true"></i> </span> 
         <a id="signout" href="#">Exit <i class="fas fa-sign-out-alt"></i></a></div>
         
@@ -46,7 +50,7 @@
             <textarea id="message" rows="1" placeholder="Message"></textarea>
             <button id="send" type="submit">SEND</button>
         </div>
-        
+        <div id="errorMessage"></div>
     </div>
 </body>
 
