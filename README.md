@@ -1,2 +1,2 @@
 # chathub
-laboration
+Lab 1 - Firebase realtidschat
