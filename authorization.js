@@ -3,20 +3,20 @@ document.addEventListener('DOMContentLoaded', function () {
 const database = firebase.database();
 let githubLogin = document.getElementById('githubLogin');
 
-//Add login event
-githubLogin.addEventListener('click', function(event){
-    
-})
-    
-    
 let provider = new firebase.auth.GithubAuthProvider();
 
-
-firebase.auth().signInWithPopup(provider)
+//Add login event
+githubLogin.addEventListener('click', function(event){
+    firebase.auth().signInWithPopup(provider)
     .then(function(result) {
 	// Om autentisering lyckas, så finns användarinfo i user
 	let user = result.user;
 });
+})
+    
+    
+
+
     
     
     
