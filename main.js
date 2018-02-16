@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	join.addEventListener('click', function (event) {
 		login()
 		getMessages()
+        focusMethod()
 	});
 	signout.addEventListener('click', function (event) {
 		logout()
@@ -82,6 +83,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	function closeBtn() {
 		incorrect.style.display = 'none';
 	}
+    //focus method when pressing join
+        focusMethod = function getFocus() {          
+        message.focus();
+    }
 	//push message function to database
 	function typeMsg(user) {
 		chatwindow.innerText = ' ';
